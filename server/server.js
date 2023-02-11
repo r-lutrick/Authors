@@ -12,4 +12,5 @@ const Routes = require('./routes/authors.route')
 Routes(app)
 
 const port = 8000
-app.listen(port, () => console.log(`Listening on port: ${port}`))
+const server = app.listen(port, () => console.log(`Listening on port: ${port}`))
+const io = require('socket.io')(server, {cors: true})
